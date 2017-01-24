@@ -1,4 +1,4 @@
-Vue.component('zaffri-modal', {
+var ZaffriModal = Vue.component('zaffri-modal', {
     template: "#zaffri-modal-template"
 });
 
