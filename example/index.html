@@ -4,12 +4,22 @@
     <title>VueJS</title>
     <!-- VueJS -->
     <script src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
+    <!-- Modal CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
 
     <section id="app">
-        
+        <button>Click to open</button>
+        <zaffri-modal></zaffri-modal>
     </section>
+
+    <!-- Modal markup -->
+    <div id="zaffri-modal-template">
+        <div id="zaffri-modal">
+            <p>Modal</p>
+        </div>
+    </div>
 
     <!-- Custom JS -->
     <script src="js/app.js"></script>
