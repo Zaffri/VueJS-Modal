@@ -5,6 +5,12 @@ var ZaffriModal = Vue.component('zaffri-modal', {
 var app = new Vue({
     el: "#app",
     data: {
-        
+         modalVisible: false
+    },
+    methods: {
+        showModal: function() {
+            console.log('open');
+            this.modalVisible = true;
+        }
     }
 });

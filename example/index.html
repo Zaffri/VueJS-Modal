@@ -10,8 +10,8 @@
 <body>
 
     <section id="app">
-        <button>Click to open</button>
-        <zaffri-modal></zaffri-modal>
+        <button v-on:click="showModal">Click to open</button>
+        <zaffri-modal v-if="modalVisible"></zaffri-modal>
     </section>
 
     <!-- Modal markup -->
