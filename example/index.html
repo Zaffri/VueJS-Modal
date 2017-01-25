@@ -11,7 +11,7 @@
 
     <section id="app">
         <button v-on:click="showModal">Click to open</button>
-        <zaffri-modal v-if="modalVisible" v-bind:data="zaffriModal"></zaffri-modal>
+        <zaffri-modal v-if="modalVisible" v-bind:data="zaffriModal" v-on:hide_modal_emit="hideModal"></zaffri-modal>
     </section>
 
     <!-- Modal markup -->
@@ -26,7 +26,7 @@
                 </section>
 
                 <div class="zaffri-modal-button-area">
-                    <button>{{ data.confirmText }}</button>
+                    <button v-on:click="hideModal">{{ data.confirmText }}</button>
                 </div>
             </div>
 

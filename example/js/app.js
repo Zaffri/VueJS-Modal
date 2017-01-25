@@ -1,6 +1,13 @@
 var ZaffriModal = Vue.component('zaffri-modal', {
     template: "#zaffri-modal-template",
-    props: ['data']
+    props: ['data'],
+    methods: {
+        hideModal: function() {
+            console.log('hide modal');
+            // emit event to parent
+            this.$emit('hide_modal_emit', "argument test");
+        }
+    }
 });
 
 var app = new Vue({
@@ -18,6 +25,9 @@ var app = new Vue({
     methods: {
         showModal: function() {
             this.modalVisible = true;
+        },
+        hideModal: function(arg) {
+            console.log("from child: " + arg);
         }
     }
 });
