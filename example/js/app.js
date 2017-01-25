@@ -1,5 +1,5 @@
 var ZaffriModal = Vue.component('zaffri-modal', {
-    template: ".zaffri-modal-template",
+    template: "#zaffri-modal-template",
     props: ['data'],
     methods: {
         hideModal: function() {
