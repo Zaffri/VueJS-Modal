@@ -26,7 +26,13 @@
                 </section>
 
                 <div class="zaffri-modal-button-area">
-                    <button v-on:click="hideModal">{{ data.confirmText }}</button>
+                    
+                    <div v-if="data.type == 'confirm'">
+                        this will be confirm modal markup
+                    </div>
+                    <div v-else>
+                        <button v-on:click="hideModal">{{ data.confirmText }}</button>
+                    </div>
                 </div>
             </div>
 
