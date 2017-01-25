@@ -2,7 +2,7 @@ var ZaffriModal = Vue.component('zaffri-modal', {
     template: "#zaffri-modal-template",
     props: ['data'],
     methods: {
-        hideModal: function(event, action = null) {
+        hideModal: function(action = null) {
             // emit event to parent
             this.$emit('hide_modal_emit', action);
         }
@@ -14,12 +14,14 @@ var app = new Vue({
     data: {
          modalVisible: false,
          zaffriModal: {
-             // notify | confirm
-             type: "notify",
+             // notify || confirm
+             type: "confirm",
              // display data
              title: "Notification",
              messageBody: "This is just some example body text.",
-             confirmText: "Ok, close"
+             confirmText: "Confirm",
+             // optional - for confirm modal type
+             cancelText: "Cancel"
          }
     },
     methods: {
