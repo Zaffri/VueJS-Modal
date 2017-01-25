@@ -3,7 +3,6 @@ var ZaffriModal = Vue.component('zaffri-modal', {
     props: ['data'],
     methods: {
         hideModal: function() {
-            console.log('hide modal');
             // emit event to parent
             this.$emit('hide_modal_emit', "argument test");
         }
@@ -17,6 +16,7 @@ var app = new Vue({
          zaffriModal: {
              // notify | confirm
              type: "notify",
+             // display data
              title: "Notification",
              messageBody: "This is just some example body text.",
              confirmText: "Ok, close"
@@ -27,7 +27,8 @@ var app = new Vue({
             this.modalVisible = true;
         },
         hideModal: function(arg) {
-            console.log("from child: " + arg);
+            // argument will contain event data for handling
+            this.modalVisible = false;
         }
     }
 });
