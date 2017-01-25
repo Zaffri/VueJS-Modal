@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>VueJS</title>
-    <!-- VueJS -->
-    <script src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
-    <!-- Modal CSS -->
-    <link rel="stylesheet" type="text/css" href="../src/style.css" />
-</head>
-<body>
-
-    <section id="app">
-        <button v-on:click="showModal">Click to open</button>
-        <zaffri-modal v-if="modalVisible" v-bind:data="zaffriModal" v-on:hide_modal_emit="hideModal"></zaffri-modal>
-    </section>
-
-    <!-- Modal markup -->
+<!-- Modal markup -->
     <div id="zaffri-modal-template" class="zaffri-modal-template">
         <div class="zaffri-modal">
 
@@ -40,8 +24,3 @@
 
         </div>
     </div>
-
-    <!-- Custom JS -->
-    <script src="js/app.js"></script>
-</body>
-</html>
