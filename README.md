@@ -38,6 +38,7 @@ data: {
              type: "confirm",
              title: "Notification",
              messageBody: "This is just some example body text.",
+             confirmText: "Confirm",
              cancelText: "Cancel" // for confirm modal type only
          }
     }
