@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VueJS</title>
+    <!-- VueJS -->
+    <script src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
+    <!-- Modal CSS -->
+    <link rel="stylesheet" type="text/css" href="../src/style.css" />
+</head>
+<body>
+
+    <section id="app">
+        <button v-on:click="showModal">Click to open</button>
+        <zaffri-modal v-if="modalVisible" v-bind:data="zaffriModal" v-on:hide_modal_emit="hideModal"></zaffri-modal>
+    </section>
+
+    <!-- Modal markup -->
+    <div id="zaffri-modal-template" class="zaffri-modal-template">
+        <div class="zaffri-modal">
+
+            <div class="zaffri-modal-body">
+                <header><h3>{{ data.title }}</h3></header>
+
+                <section class="zaffri-modal-message">
+                    <p>{{ data.messageBody }}</p>
+                </section>
+
+                <div class="zaffri-modal-button-area">
+                    
+                    <div v-if="data.type == 'confirm'">
+                        <button v-on:click="hideModal(true)">{{ data.confirmText }}</button>
+                        <button v-on:click="hideModal(false)">{{ data.cancelText }}</button>
+                    </div>
+
+                    <div v-else>
+                        <button v-on:click="hideModal">{{ data.confirmText }}</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="js/confirm.js"></script>
+</body>
+</html>

@@ -25,7 +25,7 @@ var app = new Vue({
              // notify || confirm
              type: "confirm",
              // display data
-             title: "Notification",
+             title: "Confirmation",
              messageBody: "This is just some example body text.",
              confirmText: "Confirm",
              // optional - for confirm modal type
