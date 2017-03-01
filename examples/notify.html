@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>VueJS</title>
+    <meta charset="utf-8" />
     <!-- VueJS -->
     <script src="https://unpkg.com/vue@2.1.6/dist/vue.js"></script>
     <!-- Modal CSS -->
@@ -10,13 +11,13 @@
 <body>
 
     <section id="app">
-        <button v-on:click="showModal">Click to open</button>
-        <zaffri-modal v-if="modalVisible" v-bind:data="zaffriModal" v-on:hide_modal_emit="hideModal"></zaffri-modal>
+        <button v-on:click="openModal">Click to open</button>
+        <zaffri-modal v-bind:data="modalConfig"></zaffri-modal>
     </section>
 
-    <!-- Modal markup -->
-    <div id="zaffri-modal-template" class="zaffri-modal-template">
-        <div class="zaffri-modal">
+    <!-- Modal Component markup -->
+    <template id="zaffri-modal-template" class="zaffri-modal-template">
+        <div v-if="data.visible" class="zaffri-modal">
 
             <div class="zaffri-modal-body">
                 <header><h3>{{ data.title }}</h3></header>
@@ -28,18 +29,18 @@
                 <div class="zaffri-modal-button-area">
                     
                     <div v-if="data.type == 'confirm'">
-                        <button v-on:click="hideModal(true)">{{ data.confirmText }}</button>
-                        <button v-on:click="hideModal(false)">{{ data.cancelText }}</button>
+                        <button @click="closeModal(true)">{{ data.confirmText }}</button>
+                        <button @click="closeModal(false)">{{ data.cancelText }}</button>
                     </div>
 
                     <div v-else>
-                        <button v-on:click="hideModal">{{ data.confirmText }}</button>
+                        <button @click="closeModal">{{ data.confirmText }}</button>
                     </div>
                 </div>
             </div>
 
         </div>
-    </div>
+    </template>
 
     <!-- Custom JS -->
     <script src="js/notify.js"></script>
