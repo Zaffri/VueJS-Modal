@@ -9,7 +9,6 @@
 var app = new Vue({
     el: "#app",
     data: {
-         modalVisible: false,
          modalConfig: {
              visible: false,
              // type: notify || confirm
