@@ -67,3 +67,6 @@ methods: {
 
 ####### Note:- check the example for more details.
 
+#### Features to add Next
+* Pass through callback for component to react to for confirm type modal.
+
