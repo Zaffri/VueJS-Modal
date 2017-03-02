@@ -12,18 +12,17 @@ Simple modal component.
 
 ### Step 1.
 Include the modal src in your project;
-* Add the modal markup (src/modal-markup.html) into your projects HTML file.
-* Include the modal styles (src/css/style.css) to your project.
-* Add the modal component JavaScript(src/modal.js)  to your project.
+* Modal markup (src/modal-markup.html) into your projects HTML file.
+* Modal styles (src/css/style.css) to your project.
+* Modal JavaScript(src/modal.js) to your project.
 
 ### Step 2.
 Add the modal component node to your vue instance's template.
 
 ```
-<zaffri-modal v-if="modalVisible" v-bind:data="zaffriModal" v-on:hide_modal_emit="hideModal"></zaffri-modal>
+<zaffri-modal v-bind:data="modalConfig"></zaffri-modal>
 ```
-* zaffriModal - this will be the data (modal setup) based from your main vue instance.
-* hideModal - is the event that the child calls after closing the modal.
+* modalConfig - will be the configuration for the modal.
 
 ### Step 3.
 Next you have to set up options in your vue instance to get the modal working.
@@ -32,38 +31,33 @@ Next you have to set up options in your vue instance to get the modal working.
 * "modalVisible" is a boolean that we are using to conditionally render the modal. And "zaffriModal" is a property containing an object of options for our modal. 
 
 ```
-data: {
-         modalVisible: false,
-         zaffriModal: {
+var app = new Vue({
+    el: "#app",
+    data: {
+         modalConfig: {
+             visible: false,
              type: "confirm",
-             title: "Notification",
+             title: "Confirmation",
              messageBody: "This is just some example body text.",
              confirmText: "Confirm",
-             cancelText: "Cancel" // for confirm modal type only
+             cancelText: "Cancel"
          }
     }
-    
+});
 ```
-Set the value of your modal options up however you like.
 
 ### Step 4.
-The last step is to set up methods in your vue instance to control the behaviour of the modal.
+The last step is to set up an event handler to initiate (show) your modal.
 
 ```
 methods: {
-        showModal: function() {
-            this.modalVisible = true;
-        },
-        hideModal: function(action) {
-            this.modalVisible = false;
-            console.log("Modal action = " + action);
-        }
+    openModal: function() {
+        this.modalConfig.visible = true;
     }
+}
 ```
 
-* The "showModal" is being used to set our "modalVisible" boolean to true (will open up modal).
-* The "hideModal" is being called by the event emitted from the child, to hide our modal.
-* Inside "hideModal" you can handle your confirm modals by checking the value of the action arguement. True = the user has confirmed. False = the used has cancelled.
+* modalConfig.visible is binded to the component, setting it to true will open up your modal.
 
 ####### Note:- check the example for more details.
 
