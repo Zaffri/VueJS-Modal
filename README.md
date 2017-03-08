@@ -1,14 +1,19 @@
 # VueJS Modal Component
 
-Simple modal component.
+Simple modal component. 
 
-### Modal Features
+Readme Contents
+* Modal Features
+* How to use
+* Configuration Properties
+
+## Modal Features
 
 * Two different modal states; Confirm or Notify types.
 * Passes back options args back to parent vue instance, so that you can handle confirm modal.
 * CSS transparency to dim screen when modal is shown.
 
-### How to use
+## How to use
 
 ### Step 1.
 Include the modal src in your project;
@@ -41,9 +46,13 @@ var app = new Vue({
              messageBody: "This is just some example body text.",
              confirmText: "Confirm",
              cancelText: "Cancel"
+             callbackData: ...
+             confirmCallback: function() {...}
          }
     }
 });
+
+###### See "Configuration Properties" below for more details.
 ```
 
 ### Step 4.
@@ -59,8 +68,33 @@ methods: {
 
 * modalConfig.visible is binded to the component, setting it to true will open up your modal.
 
-####### Note:- check the example for more details.
+###### Note:- check the example for more details.
 
-#### Features to add Next
-* Pass through callback for component to react to for confirm type modal.
+## Configuration Properties
 
+#### visible
+This is a boolean which determines if the modal is visible.
+
+#### type
+There are two types of modals currently; "confirm" and "notify".
+
+#### title
+Title is a string which will be displayed as the modal title.
+
+#### messageBody
+Message body is the string displayed on the modal as the main text.
+
+#### confirmText
+Confirm text is the string that is displayed on the modals confirm button.
+
+#### cancelText
+###### Optional: only set for confirm modals.
+Cancel text is the string that is displayed on the modals cancel button.
+
+#### callbackData
+###### Optional: only set for confirm modals.
+Callback data is data passed to the callback function - the second parameter.
+
+#### confirmCallback
+###### Optional: only set for confirm modals.
+The callback is the function that is called when a confirmation modal is closed (cancelled or conofirmed).
