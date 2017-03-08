@@ -18,7 +18,10 @@ var app = new Vue({
              messageBody: "This is just some example body text.",
              confirmText: "Confirm",
              // optional - for confirm modal type
-             cancelText: "Cancel"
+             cancelText: "Cancel",
+             confirmCallback: function(action) {
+                 console.log("ACTION = " + action);
+             }
          }
     },
     methods: {

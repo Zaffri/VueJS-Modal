@@ -12,7 +12,10 @@ var ZaffriModal = Vue.component('zaffri-modal', {
     methods: {
         closeModal: function(action = null) {
             this.data.visible = false;
-            console.log("Modal action = " + action);
+            if(this.data.confirmCallback != undefined) this.confirmCallback(action);
+        },
+        confirmCallback: function(action) {
+            this.data.confirmCallback(action);
         }
     }
 });
