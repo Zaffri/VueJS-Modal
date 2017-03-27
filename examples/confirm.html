@@ -12,7 +12,7 @@
 
     <section id="app">
         <button v-on:click="openModal(5, 'example')">Click to open</button>
-        <zaffri-modal v-bind:data="modalConfig"></zaffri-modal>
+        <zaffri-modal v-bind:data="modalConfig" v-on:hide_modal_emit="modalCallback"></zaffri-modal>
     </section>
 
     <!-- Modal Component markup -->
