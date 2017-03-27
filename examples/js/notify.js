@@ -1,6 +1,6 @@
 /* --------------------------------------------------------
 	VueJS - Modal Component
-	Version: 	0.0.3
+	Version: 	0.0.4
 	Author: 	Steven Morrison
 	Website:	www.zaffri.com
 	GitHub:		github.com/Zaffri
